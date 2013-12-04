@@ -70,6 +70,7 @@ for i=1:iterations
 %    end
 
 end
+pause(7);
 figure(2)   
 a_rec_show=(a_rec+1)/2;
 set(2,'Name','Recovered Input')
