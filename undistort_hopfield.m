@@ -2,12 +2,12 @@
 %% A very simple example of a Hopfield network applied to image undistortion %%
 %%%--------------------------------------------------------------------------%%
 function y = undistort_hopfield(varargin)
-argc = length(varargin)
+argc = length(varargin);
   if argc == 1
 	img = varargin{1};
   else
 	disp 'Specify an input file: binary image.'
-        exit;
+    return;
   end;
 % Clear environment
 close all; clc;
@@ -48,7 +48,7 @@ end
 %%Show corrupted
 figure(1)
 set(1,'Name','Corrupted Input')
-imshow(reshape(sign(a_corr),size1));
+imagesc(reshape(sign(a_corr),size1));
 dist_img=a_corr;
 
 
@@ -74,4 +74,4 @@ pause(7);
 figure(2)   
 a_rec_show=(a_rec+1)/2;
 set(2,'Name','Recovered Input')
-imshow(reshape(a_rec,size1));
+imagesc(reshape(a_rec,size1));
